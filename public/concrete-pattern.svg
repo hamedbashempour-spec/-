@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <!-- Lightweight 0-cost architectural cement pattern (No runtime CPU filters) -->
+  <rect width="120" height="120" fill="#f1f5f9" />
+  
+  <!-- Subtle cement texture mottling -->
+  <rect x="0" y="0" width="60" height="60" fill="#eef2f6" opacity="0.6" />
+  <rect x="60" y="60" width="60" height="60" fill="#e8edf3" opacity="0.4" />
+  <rect x="0" y="60" width="60" height="60" fill="#f4f7fa" opacity="0.5" />
+  
+  <!-- Subtle aggregate flecks & micro-texture -->
+  <g fill="#475569" opacity="0.05">
+    <circle cx="12" cy="18" r="0.75" />
+    <circle cx="38" cy="9" r="0.6" />
+    <circle cx="65" cy="28" r="0.8" />
+    <circle cx="95" cy="14" r="0.65" />
+    <circle cx="112" cy="35" r="0.7" />
+    
+    <circle cx="22" cy="52" r="0.6" />
+    <circle cx="48" cy="70" r="0.85" />
+    <circle cx="82" cy="48" r="0.65" />
+    <circle cx="105" cy="75" r="0.7" />
+    
+    <circle cx="15" cy="88" r="0.7" />
+    <circle cx="35" cy="108" r="0.6" />
+    <circle cx="72" cy="92" r="0.8" />
+    <circle cx="90" cy="115" r="0.65" />
+    <circle cx="116" cy="102" r="0.75" />
+
+    <circle cx="58" cy="110" r="0.6" />
+    <circle cx="8" cy="38" r="0.7" />
+    <circle cx="78" cy="12" r="0.65" />
+  </g>
+
+  <!-- Limestone highlights -->
+  <g fill="#ffffff" opacity="0.4">
+    <circle cx="14" cy="20" r="0.6" />
+    <circle cx="67" cy="30" r="0.7" />
+    <circle cx="50" cy="72" r="0.6" />
+    <circle cx="74" cy="94" r="0.7" />
+    <circle cx="107" cy="77" r="0.6" />
+  </g>
+</svg>

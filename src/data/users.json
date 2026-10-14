@@ -1,0 +1,60 @@
+[
+  {
+    "username": "Parsa123",
+    "fullName": "یاشار پارسا",
+    "password": "Yashar123",
+    "role": "admin",
+    "eDate": "1406/12/29",
+    "userTag": "board"
+  },
+  {
+    "username": "Test2",
+    "fullName": "مهندس مهدی مرادی",
+    "password": "123456",
+    "role": "user",
+    "eDate": "1406/12/11",
+    "userTag": "member"
+  },
+  {
+    "username": "Hamed",
+    "fullName": "مهندس حامد هاشم پور",
+    "password": "hmdhmp",
+    "role": "admin",
+    "eDate": "1410/12/29",
+    "userTag": "ceo"
+  },
+  {
+    "username": "admin",
+    "fullName": "مدیریت انجمن مجریان ذیصلاح ارومیه",
+    "password": "admin1403",
+    "role": "admin",
+    "eDate": "1406/12/29",
+    "userTag": "admin"
+  },
+  {
+    "username": "engineer1",
+    "fullName": "مهندس محمد رضایی",
+    "password": "123456",
+    "role": "user",
+    "eDate": "1405/12/29",
+    "userTag": "member"
+  },
+  {
+    "username": "engineer_expired",
+    "fullName": "مهندس سهراب مرادی",
+    "password": "123456",
+    "role": "user",
+    "eDate": "1402/01/01",
+    "userTag": "member"
+  },
+  {
+    "username": "test1",
+    "fullName": "مهندس علی اکبری",
+    "password": "123456",
+    "role": "user",
+    "eDate": "1406/12/29",
+    "field": "مهندسی عمران (نظارت / اجرا / محاسبات)",
+    "baseGrade": "پایه ۲ (دو)",
+    "userTag": "member"
+  }
+]

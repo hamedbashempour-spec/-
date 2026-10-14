@@ -1,0 +1,101 @@
+{
+  "entities": {
+    "ArtisanItem": {
+      "title": "Artisan or Vendor Record",
+      "description": "Information about a craftsman or supplier in the construction sector",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "entityType": { "type": "string", "enum": ["artisan", "vendor"] },
+        "fullName": { "type": "string" },
+        "storeName": { "type": "string" },
+        "managerName": { "type": "string" },
+        "trade": { "type": "string" },
+        "tradeCategory": { "type": "string" },
+        "experienceYears": { "type": "number" },
+        "phone": { "type": "string" },
+        "district": { "type": "string" },
+        "description": { "type": "string" },
+        "referrerName": { "type": "string" },
+        "referrerLicense": { "type": "string" },
+        "referrerPhone": { "type": "string" },
+        "rating": { "type": "number" },
+        "ratingCount": { "type": "number" },
+        "verifiedByAssociation": { "type": "boolean" },
+        "status": { "type": "string", "enum": ["pending", "approved", "rejected"] },
+        "registeredByEngineer": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "approvedAt": { "type": "string" }
+      },
+      "required": ["fullName", "phone", "trade"]
+    },
+    "ArtisanReview": {
+      "title": "Artisan or Vendor Review",
+      "description": "Evaluation and review left by an authenticated engineer",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "artisanId": { "type": "string" },
+        "reviewerUserId": { "type": "string" },
+        "reviewerName": { "type": "string" },
+        "reviewerLicense": { "type": "string" },
+        "reviewerPhone": { "type": "string" },
+        "score": { "type": "number" },
+        "comment": { "type": "string" },
+        "date": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["reviewerName", "score", "comment"]
+    },
+    "UserChecklistProject": {
+      "title": "User Checklist Project",
+      "description": "Supervising and executing engineer inspection checklist synced across devices",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "projectName": { "type": "string" },
+        "siteLocation": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["userId", "projectName"]
+    },
+    "WagePriceRecord": {
+      "title": "Construction Wage Rate Record",
+      "description": "Historical construction labor wage rate record submitted by engineers",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "artisanId": { "type": "string" },
+        "artisanName": { "type": "string" },
+        "serviceTitle": { "type": "string" },
+        "unit": { "type": "string" },
+        "priceAmountTomans": { "type": "number" },
+        "priceType": { "type": "string", "enum": ["executed_contract", "inquiry_quote"] },
+        "actionDate": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "status": { "type": "string", "enum": ["pending", "approved", "rejected"] }
+      },
+      "required": ["artisanId", "serviceTitle", "priceAmountTomans", "unit", "priceType", "actionDate"]
+    }
+  },
+  "firestore": {
+    "/artisans/{artisanId}": {
+      "schema": { "$ref": "#/entities/ArtisanItem" },
+      "description": "Approved or pending craftsmen and goods/service suppliers in Urmia"
+    },
+    "/artisans/{artisanId}/reviews/{reviewId}": {
+      "schema": { "$ref": "#/entities/ArtisanReview" },
+      "description": "Engineer reviews and ratings for specific artisan or vendor"
+    },
+    "/wagePrices/{priceId}": {
+      "schema": { "$ref": "#/entities/WagePriceRecord" },
+      "description": "Construction labor wage rates and quotes verified by administration"
+    },
+    "/userProjects/{projectId}": {
+      "schema": { "$ref": "#/entities/UserChecklistProject" },
+      "description": "Inspection projects and progress tracked by engineers"
+    }
+  }
+}
+

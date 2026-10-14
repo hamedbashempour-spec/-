@@ -1,0 +1,19 @@
+[
+  {
+    "id": "wage-1791959016848-zpej",
+    "artisanId": "art-1791220446592-n2ua",
+    "artisanName": "اکبر",
+    "artisanPhone": "9886",
+    "serviceTitle": "آرماتوربند",
+    "unit": "مترمربع",
+    "priceAmountTomans": 1230000,
+    "priceType": "executed_contract",
+    "actionDate": "1405/07/05",
+    "createdAt": "۱۴۰۵/۷/۲۲ ساعت ۰۶:۲۳",
+    "registeredByUserId": "test1",
+    "registeredByEngineerName": "مهندس علی اکبری",
+    "status": "approved",
+    "approvedAt": "۱۴۰۵/۷/۲۲",
+    "approvedBy": "مهندس حامد هاشم پور"
+  }
+]

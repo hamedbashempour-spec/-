@@ -1,0 +1,30 @@
+{
+  "name": "انجمن مجریان ذیصلاح ارومیه",
+  "short_name": "مجریان ارومیه",
+  "description": "سامانه جامع و کاربردی مهندسان و مجریان ذی‌صلاح ارومیه شامل ظرفیت اشتغال، اخبار رسمی، چک‌لیست‌های اجرایی، متره و برآورد و بانک مقررات ساختمان",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "orientation": "portrait-primary",
+  "dir": "rtl",
+  "lang": "fa-IR",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    }
+  ]
+}

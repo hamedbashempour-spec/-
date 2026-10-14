@@ -1,0 +1,6 @@
+{
+  "name": "انجمن مجریان ذیصلاح ارومیه",
+  "description": "سامانه جامع و کاربردی مهندسان و مجریان ذی‌صلاح ارومیه شامل ظرفیت اشتغال، اخبار رسمی، چک‌لیست‌های اجرایی، متره و برآورد و بانک مقررات ساختمان",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

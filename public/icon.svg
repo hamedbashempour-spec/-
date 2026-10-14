@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Background Radial Brushed Texture Gradient -->
+    <radialGradient id="darkBg" cx="48%" cy="46%" r="52%">
+      <stop offset="0%" stop-color="#2a2c33" />
+      <stop offset="45%" stop-color="#1c1e23" />
+      <stop offset="85%" stop-color="#121316" />
+      <stop offset="100%" stop-color="#0a0b0d" />
+    </radialGradient>
+
+    <!-- Outer Metallic Rim Gradient -->
+    <linearGradient id="outerRim" x1="20%" y1="10%" x2="80%" y2="90%">
+      <stop offset="0%" stop-color="#4a4d56" />
+      <stop offset="25%" stop-color="#22242a" />
+      <stop offset="50%" stop-color="#141518" />
+      <stop offset="75%" stop-color="#2a2c33" />
+      <stop offset="100%" stop-color="#0d0e10" />
+    </linearGradient>
+
+    <!-- Gold Medallion Radial / Conical Sheen Gradient -->
+    <radialGradient id="goldSheen" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fdf0cd" />
+      <stop offset="25%" stop-color="#eed18a" />
+      <stop offset="55%" stop-color="#caa053" />
+      <stop offset="78%" stop-color="#dfbc72" />
+      <stop offset="92%" stop-color="#ad8234" />
+      <stop offset="100%" stop-color="#8c6422" />
+    </radialGradient>
+
+    <linearGradient id="goldLinearAngle" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d4aa58" />
+      <stop offset="20%" stop-color="#fae3a6" />
+      <stop offset="40%" stop-color="#caa053" />
+      <stop offset="60%" stop-color="#fdf2d0" />
+      <stop offset="80%" stop-color="#ba8c3b" />
+      <stop offset="100%" stop-color="#ecc67a" />
+    </linearGradient>
+
+    <!-- Medallion Inner Rim Bevel -->
+    <linearGradient id="innerBevel" x1="15%" y1="15%" x2="85%" y2="85%">
+      <stop offset="0%" stop-color="#18191c" />
+      <stop offset="40%" stop-color="#2f3138" />
+      <stop offset="60%" stop-color="#1a1b1e" />
+      <stop offset="100%" stop-color="#4d505a" />
+    </linearGradient>
+
+    <!-- Tower Bevel Highlight -->
+    <linearGradient id="towerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2b2d34" />
+      <stop offset="40%" stop-color="#1c1d22" />
+      <stop offset="80%" stop-color="#121316" />
+      <stop offset="100%" stop-color="#0a0a0d" />
+    </linearGradient>
+
+    <!-- Deep Drop Shadow Filter for 3D Tower Emblem -->
+    <filter id="medallionShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.75" />
+    </filter>
+
+    <filter id="towerShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="5" stdDeviation="5" flood-color="#000000" flood-opacity="0.85" />
+      <feDropShadow dx="-1" dy="-1" stdDeviation="1.5" flood-color="#ffffff" flood-opacity="0.15" />
+    </filter>
+
+    <filter id="rimShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.9" />
+    </filter>
+  </defs>
+
+  <!-- 1. Background Circular Canvas with Dark Brushed Texture -->
+  <circle cx="256" cy="256" r="256" fill="url(#darkBg)" />
+
+  <!-- Concentric brushed metal micro-rings -->
+  <circle cx="256" cy="256" r="248" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1.5" />
+  <circle cx="256" cy="256" r="236" fill="none" stroke="rgba(0,0,0,0.4)" stroke-width="1.5" />
+  <circle cx="256" cy="256" r="224" fill="none" stroke="rgba(255,255,255,0.025)" stroke-width="1" />
+  <circle cx="256" cy="256" r="212" fill="none" stroke="rgba(0,0,0,0.3)" stroke-width="1" />
+
+  <!-- 2. Outer Deep Chamfer & Stepped Rim -->
+  <circle cx="256" cy="256" r="208" fill="url(#outerRim)" filter="url(#medallionShadow)" />
+  <circle cx="256" cy="256" r="204" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1.5" />
+  <circle cx="256" cy="256" r="198" fill="none" stroke="rgba(0,0,0,0.6)" stroke-width="2" />
+
+  <!-- 3. Raised Inner Dark Border Ring -->
+  <circle cx="256" cy="256" r="195" fill="#18191c" />
+  <circle cx="256" cy="256" r="195" fill="none" stroke="url(#innerBevel)" stroke-width="18" filter="url(#rimShadow)" />
+  <circle cx="256" cy="256" r="186" fill="none" stroke="rgba(0,0,0,0.85)" stroke-width="2" />
+  <circle cx="256" cy="256" r="177" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1" />
+
+  <!-- 4. Pure Brushed Gold Medallion Core -->
+  <g filter="url(#medallionShadow)">
+    <circle cx="256" cy="256" r="175" fill="url(#goldSheen)" />
+    <!-- Fine diagonal luster sheen overlay -->
+    <circle cx="256" cy="256" r="175" fill="url(#goldLinearAngle)" opacity="0.55" style="mix-blend-mode: overlay;" />
+    
+    <!-- Ultra-fine concentric brush tracks on gold surface -->
+    <circle cx="256" cy="256" r="162" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="0.8" />
+    <circle cx="256" cy="256" r="148" fill="none" stroke="rgba(140,100,34,0.18)" stroke-width="0.8" />
+    <circle cx="256" cy="256" r="132" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.8" />
+    <circle cx="256" cy="256" r="115" fill="none" stroke="rgba(140,100,34,0.15)" stroke-width="0.8" />
+    <circle cx="256" cy="256" r="95" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="0.8" />
+    
+    <!-- Soft Radial Ambient Inset Vignette on Gold perimeter -->
+    <circle cx="256" cy="256" r="175" fill="none" stroke="rgba(100,70,20,0.4)" stroke-width="6" />
+    <circle cx="256" cy="256" r="173" fill="none" stroke="rgba(40,25,5,0.5)" stroke-width="2" />
+  </g>
+
+  <!-- 5. Embossed 3D High-Rise Architectural Skyline (The 3 Towers) -->
+  <g filter="url(#towerShadow)">
+    <!-- Baseline Anchor -->
+    
+    <!-- LEFT TOWER -->
+    <!-- Tower Main Body -->
+    <path d="M 191 306 L 191 222 L 211 214 L 211 306 Z" fill="url(#towerGradient)" stroke="#111215" stroke-width="1" />
+    <path d="M 211 214 L 227 220 L 227 306 L 211 306 Z" fill="url(#towerGradient)" stroke="#111215" stroke-width="1" />
+    
+    <!-- Left Tower Sloped Roof & Top Bevel -->
+    <path d="M 191 222 L 211 214 L 227 220" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.8" stroke-linecap="round" />
+    <line x1="191" y1="222" x2="191" y2="306" stroke="rgba(255,255,255,0.18)" stroke-width="1.2" />
+
+    <!-- Left Tower Louvers / Horizontal Window Slices (6 precision cutouts) -->
+    <rect x="213" y="228" width="12" height="4" rx="1" fill="#c49a48" opacity="0.95" />
+    <rect x="213" y="238" width="12" height="4" rx="1" fill="#c49a48" opacity="0.95" />
+    <rect x="213" y="248" width="12" height="4" rx="1" fill="#c49a48" opacity="0.95" />
+    <rect x="213" y="258" width="12" height="4" rx="1" fill="#c49a48" opacity="0.95" />
+    <rect x="213" y="268" width="12" height="4" rx="1" fill="#c49a48" opacity="0.95" />
+    <rect x="213" y="278" width="12" height="4" rx="1" fill="#c49a48" opacity="0.95" />
+    <rect x="213" y="288" width="12" height="4" rx="1" fill="#c49a48" opacity="0.95" />
+    <rect x="213" y="298" width="12" height="4" rx="1" fill="#c49a48" opacity="0.95" />
+
+
+    <!-- CENTER TOWER (Tallest Architectural Icon with Curved Wave Profile) -->
+    <!-- Tower Main Mass -->
+    <path d="M 231 306 L 231 184 L 248 178 L 253 185 C 265 192, 280 206, 285 228 C 290 248, 291 280, 291 306 Z" fill="url(#towerGradient)" stroke="#111215" stroke-width="1.2" />
+    
+    <!-- Center Tower Vertical Left Spine Wall -->
+    <path d="M 231 184 L 248 178 L 248 306 L 231 306 Z" fill="#151619" stroke="#0d0e10" stroke-width="1" />
+    
+    <!-- Center Tower Top Highlights -->
+    <line x1="231" y1="184" x2="248" y2="178" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-linecap="round" />
+    <line x1="231" y1="184" x2="231" y2="306" stroke="rgba(255,255,255,0.22)" stroke-width="1.5" />
+    <path d="M 253 185 C 265 192, 280 206, 285 228" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" />
+
+    <!-- Center Tower Curved Horizontal Architectural Louvers (Distinctive Wave) -->
+    <path d="M 251 190 C 262 196, 271 204, 276 211" fill="none" stroke="#c49a48" stroke-width="4.5" stroke-linecap="round" />
+    <path d="M 251 202 C 264 207, 275 216, 280 223" fill="none" stroke="#c49a48" stroke-width="4.5" stroke-linecap="round" />
+    <path d="M 251 214 C 265 219, 277 227, 283 236" fill="none" stroke="#c49a48" stroke-width="4.5" stroke-linecap="round" />
+    <path d="M 251 226 C 266 230, 278 238, 284 248" fill="none" stroke="#c49a48" stroke-width="4.5" stroke-linecap="round" />
+    <path d="M 251 238 C 266 242, 279 250, 285 260" fill="none" stroke="#c49a48" stroke-width="4.5" stroke-linecap="round" />
+    <path d="M 251 250 C 266 253, 279 260, 285 271" fill="none" stroke="#c49a48" stroke-width="4.5" stroke-linecap="round" />
+    <path d="M 251 262 C 266 264, 279 270, 285 281" fill="none" stroke="#c49a48" stroke-width="4.5" stroke-linecap="round" />
+    <path d="M 251 274 C 266 275, 279 281, 285 291" fill="none" stroke="#c49a48" stroke-width="4.5" stroke-linecap="round" />
+    <path d="M 251 286 C 266 286, 279 291, 285 300" fill="none" stroke="#c49a48" stroke-width="4.5" stroke-linecap="round" />
+    <line x1="251" y1="298" x2="285" y2="298" stroke="#c49a48" stroke-width="4.5" stroke-linecap="round" />
+
+
+    <!-- RIGHT TOWER -->
+    <!-- Tower Body -->
+    <path d="M 295 306 L 295 240 C 298 236, 305 233, 312 237 C 319 242, 325 248, 329 254 L 329 306 Z" fill="url(#towerGradient)" stroke="#111215" stroke-width="1.2" />
+    
+    <!-- Right Tower Left Vertical Backbone -->
+    <path d="M 295 240 L 305 235 L 305 306 L 295 306 Z" fill="#151619" stroke="#0d0e10" stroke-width="1" />
+    
+    <!-- Right Tower Highlights -->
+    <line x1="295" y1="240" x2="295" y2="306" stroke="rgba(255,255,255,0.22)" stroke-width="1.2" />
+    <path d="M 305 235 C 314 240, 323 247, 329 254" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-linecap="round" />
+
+    <!-- Right Tower Louvers / Horizontal Window Slices (6 cutouts) -->
+    <path d="M 307 248 C 314 252, 320 257, 324 261" fill="none" stroke="#c49a48" stroke-width="4" stroke-linecap="round" />
+    <path d="M 307 258 C 315 261, 321 266, 325 271" fill="none" stroke="#c49a48" stroke-width="4" stroke-linecap="round" />
+    <path d="M 307 268 C 316 270, 322 274, 326 280" fill="none" stroke="#c49a48" stroke-width="4" stroke-linecap="round" />
+    <path d="M 307 278 C 316 279, 322 283, 326 288" fill="none" stroke="#c49a48" stroke-width="4" stroke-linecap="round" />
+    <path d="M 307 288 C 316 288, 322 291, 326 295" fill="none" stroke="#c49a48" stroke-width="4" stroke-linecap="round" />
+    <line x1="307" y1="298" x2="326" y2="298" stroke="#c49a48" stroke-width="4" stroke-linecap="round" />
+
+    <!-- Solid Base Line Foundation -->
+    <line x1="189" y1="306" x2="331" y2="306" stroke="#0a0a0d" stroke-width="3.5" stroke-linecap="round" />
+  </g>
+</svg>

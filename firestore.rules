@@ -1,0 +1,88 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && (
+        request.auth.token.email == 'hamedbashempour@gmail.com' ||
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid))
+      );
+    }
+
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Connection test document
+    match /test/connection {
+      allow read: if true;
+    }
+
+    // Artisans & Vendors
+    match /artisans/{artisanId} {
+      allow read: if true;
+      allow create: if request.resource.data.keys().hasAll(['fullName', 'trade', 'phone']) &&
+                      request.resource.data.fullName is string &&
+                      request.resource.data.phone is string;
+      // Direct client update is strictly blocked to prevent tampering with rating, ratingCount, or status.
+      // Only Admin can update or delete artisan/vendor documents in Firestore.
+      allow update: if isAdmin();
+      allow delete: if isAdmin();
+
+      // Reviews subcollection: artisans/{artisanId}/reviews/{reviewId}
+      match /reviews/{reviewId} {
+        allow read: if true;
+
+        // Allow create:
+        // Valid score (1 to 5), non-empty comment, and reviewerName
+        allow create: if request.resource.data.keys().hasAll(['reviewerName', 'score', 'comment']) &&
+                        request.resource.data.reviewerName is string &&
+                        request.resource.data.reviewerName.size() > 0 &&
+                        request.resource.data.score is number &&
+                        request.resource.data.score >= 1 &&
+                        request.resource.data.score <= 5 &&
+                        request.resource.data.comment is string &&
+                        request.resource.data.comment.size() > 0;
+
+        // Allow update:
+        // Admin or valid review score and comment update
+        allow update: if isAdmin() || (
+                        request.resource.data.score is number &&
+                        request.resource.data.score >= 1 &&
+                        request.resource.data.score <= 5 &&
+                        request.resource.data.comment is string &&
+                        request.resource.data.comment.size() > 0
+                      );
+
+        // Allow delete: admin or client delete
+        allow delete: if isAdmin() || true;
+      }
+    }
+
+    // Construction Wage Prices
+    match /wagePrices/{priceId} {
+      allow read: if true;
+      allow create: if request.resource.data.keys().hasAll(['artisanId', 'serviceTitle', 'priceAmountTomans']) &&
+                      request.resource.data.priceAmountTomans is number &&
+                      request.resource.data.priceAmountTomans > 0;
+      allow update: if isAdmin();
+      allow delete: if isAdmin();
+    }
+
+    // User Checklists & Projects
+    match /userProjects/{projectId} {
+      allow read: if isSignedIn() && (resource.data.userId == request.auth.uid || isAdmin());
+      allow create: if isSignedIn() && request.resource.data.userId == request.auth.uid;
+      // userId is strictly immutable on update and cannot be altered or transferred to another user
+      allow update: if isSignedIn() &&
+                      (resource.data.userId == request.auth.uid || isAdmin()) &&
+                      request.resource.data.userId == resource.data.userId;
+      allow delete: if isSignedIn() && (resource.data.userId == request.auth.uid || isAdmin());
+    }
+  }
+}
